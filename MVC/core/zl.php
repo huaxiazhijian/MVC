@@ -10,6 +10,7 @@
   	 	\core\lib\log::init();//启动初始化方法
       \core\lib\log::log($_SERVER,'server');
   	 	$route = new \core\lib\route();
+     
   	 	$ctrlClass =  $route->ctrl;
   	 	$action = $route->action;
   	 	 $ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';

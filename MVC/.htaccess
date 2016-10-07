@@ -1,5 +1,5 @@
  <IfModule mod_rewrite.c>
-    RewriteEngine Off
+    RewriteEngine On
 
     # 确保请求路径不是一个文件名或目录
     RewriteCond %{REQUEST_FILENAME} !-f

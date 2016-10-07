@@ -4,9 +4,9 @@
    	  	// 'USERNAME'=>'root',
    	  	// 'PASSWD'=>'root'
    	'database_type' => 'mysql',
-    'database_name' => 'test',
-    'server' => 'localhost',
-    'username' => 'root',
+    'database_name' => 'test1',
+    'server' => '123.56.50.246',
+    'username' => 'zhulei',
     'password' => 'root',
     'charset' => 'utf8'
    	);

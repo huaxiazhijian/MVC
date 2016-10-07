@@ -37,7 +37,7 @@
     * 加载函数
     */
    include CORE.'/common/function.php';
-   include CORE.'/ZL.php';
+   include CORE.'/zl.php';
    /**
     * 启动框架
     */

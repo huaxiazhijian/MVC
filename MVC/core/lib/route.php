@@ -17,15 +17,15 @@
  		{
           $path =$_SERVER['REQUEST_URI'];
           $patharr=explode('/',trim($path,'/'));
+          if(isset($patharr[0]))
+          {
+          	$this->ctrl = $patharr[0];
+          	unset($patharr[0]);
+          }
           if(isset($patharr[1]))
           {
-          	$this->ctrl = $patharr[1];
+          	$this->action = $patharr[1];
           	unset($patharr[1]);
-          }
-          if(isset($patharr[2]))
-          {
-          	$this->action = $patharr[2];
-          	unset($patharr[2]);
           }
           else
           {
@@ -34,7 +34,7 @@
           //url多余部分转换成GET值
           $count = count($patharr)+2;
           //p($count);
-          $i=3;
+          $i=2;
           while($i < $count)
           {   
           	if(isset($patharr[$i + 1]))

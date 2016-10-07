@@ -24,7 +24,9 @@
      else
      {  
      	
-        $path=ZL.'\core\config\\'.$file.'.php';
+        $path=ZL.'/core/config/'.$file.'.php';
+    
+           
 	     if(is_file($path))
 	     {
 	       $conf = include $path;
@@ -57,7 +59,8 @@
 	     else
 	     {  
 	     	
-	        $path=ZL.'\core\config\\'.$file.'.php';
+	        $path=ZL.'/core/config/'.$file.'.php';
+                 //p($path);die;
 		     if(is_file($path))
 		     {
 		       $conf = include $path;
