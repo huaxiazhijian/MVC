@@ -17,25 +17,54 @@ class __TwigTemplate_8915a7ab1f0196bfdb7e85d610ad9ea21e232b735ad6da2eeb2be987239
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<html>
-\t<body>
-\t\t<header>haeder</header>
-\t\t  <content>
-\t\t  \t";
-        // line 5
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+\t<!-- <meta charset=\"UTF-8\">
+\t<title></title>
+\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+\t<meta name=\"Viewport\" content=\"width=device-width,initial-scale=1\">
+\t<meta name=\"format-detection\" content=\"telephone=no\">
+\t<meta name=\"renderer\" content=\"webkit\">
+\t<meta http-equiv=\"Cache-Control\" content=\"no-siteapp\"/>
+\t<link rel=\"stylesheet\" href=\"/assets/css/amazeui.min.css\"/>
+\t<link rel=\"stylesheet\" href=\"/assets/css/app.css\"/> -->
+</head>
+  
+<body>
+\t<header class=\"am-topbar am-text-center\">
+\t <h1 class=\"am-sm-12\">超简单留言板</h1>
+\t <div class=\"am-g\">
+\t \t<a class=\"am-btn-default\" href=\"/\">所有留言</a>
+\t \t<a class=\"am-btn-default\" href=\"/index.php/index/add\">添加留言</a>
+\t </div>
+\t</header> \t
+\t <div class=\"am-g content\">
+\t ";
+        // line 24
         $this->displayBlock('content', $context, $blocks);
-        // line 7
-        echo "\t\t  </content>
-\t\t<footer>footer</footer>
-\t</body>
+        // line 25
+        echo "\t 
+\t </div>
+\t<footer class=\"footer\">
+\t\t<p>&copy; 2016 超简单留言板</p>
+\t</footer>
+\t
+\t<!-- <script scr=\"http://libs.baidu.com/jquery/1.11.1/jquery.min.js\"></script>
+\t// <script scr=\"http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js\"></script>
+\t// <script scr=\"assets/js/amazeui.ie&polyfill.min.js\"></script>
+\t// <script scr=\"assets/js/jquery.min.js\"></script>
+\t// <script scr=\"assets/js/amazeui.min.js\"></script> -->
+\t
+</body>
 </html>";
     }
 
-    // line 5
+    // line 24
     public function block_content($context, array $blocks = array())
     {
-        // line 6
-        echo "\t\t  \t";
+        // line 25
+        echo "\t ";
     }
 
     public function getTemplateName()
@@ -45,20 +74,48 @@ class __TwigTemplate_8915a7ab1f0196bfdb7e85d610ad9ea21e232b735ad6da2eeb2be987239
 
     public function getDebugInfo()
     {
-        return array (  38 => 6,  35 => 5,  28 => 7,  26 => 5,  20 => 1,);
+        return array (  67 => 25,  64 => 24,  47 => 25,  45 => 24,  20 => 1,);
     }
 
     public function getSource()
     {
-        return "<html>
-\t<body>
-\t\t<header>haeder</header>
-\t\t  <content>
-\t\t  \t{% block content %}
-\t\t  \t{% endblock %}
-\t\t  </content>
-\t\t<footer>footer</footer>
-\t</body>
+        return "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+\t<!-- <meta charset=\"UTF-8\">
+\t<title></title>
+\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+\t<meta name=\"Viewport\" content=\"width=device-width,initial-scale=1\">
+\t<meta name=\"format-detection\" content=\"telephone=no\">
+\t<meta name=\"renderer\" content=\"webkit\">
+\t<meta http-equiv=\"Cache-Control\" content=\"no-siteapp\"/>
+\t<link rel=\"stylesheet\" href=\"/assets/css/amazeui.min.css\"/>
+\t<link rel=\"stylesheet\" href=\"/assets/css/app.css\"/> -->
+</head>
+  
+<body>
+\t<header class=\"am-topbar am-text-center\">
+\t <h1 class=\"am-sm-12\">超简单留言板</h1>
+\t <div class=\"am-g\">
+\t \t<a class=\"am-btn-default\" href=\"/\">所有留言</a>
+\t \t<a class=\"am-btn-default\" href=\"/index.php/index/add\">添加留言</a>
+\t </div>
+\t</header> \t
+\t <div class=\"am-g content\">
+\t {% block content %}
+\t {% endblock %}\t 
+\t </div>
+\t<footer class=\"footer\">
+\t\t<p>&copy; 2016 超简单留言板</p>
+\t</footer>
+\t
+\t<!-- <script scr=\"http://libs.baidu.com/jquery/1.11.1/jquery.min.js\"></script>
+\t// <script scr=\"http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js\"></script>
+\t// <script scr=\"assets/js/amazeui.ie&polyfill.min.js\"></script>
+\t// <script scr=\"assets/js/jquery.min.js\"></script>
+\t// <script scr=\"assets/js/amazeui.min.js\"></script> -->
+\t
+</body>
 </html>";
     }
 }

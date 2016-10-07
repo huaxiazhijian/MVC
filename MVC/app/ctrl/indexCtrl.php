@@ -1,45 +1,61 @@
-<?php 
-  namespace app\ctrl;
-  use core\lib\model;
-  class indexCtrl extends \core\zl
-  {
-  	public function index()
-  	{
-  		
-  		// $model = new \core\lib\model();
-  		// //数据库操作
-  		// $sql = 'select * from documents';
-  		// $re=$model->query($sql);
-  		// p($re->fetchall());
-      // $temp = \core\lib\conf::get('CTRL','route');
-      // $temp = \core\lib\conf::get('ACTION','route'); 
-      // P($temp); 
-      //   $temp=new \core\lib\model();
-      //   $data = 'Hello World';
-  		// $this->assign('data',$data);
-  		// $this->display('index.html');
-      //$model = new \app\model\cModel(); 
-      
-      // $re=$model->select('documents','*');
-      // $data = array(
-      //     '字段'=>'值'
-      //   );
-      // $ret = $model->insert('表明'，$data);
-      // //具体用法可以查看medoo官方文档
-      // dump($re);
-      // $ret = $model->lists();
-      // dump($ret);
-      
-      $data = 'hllow word';
-      $this->assign('data',$data);
-      $this->display('index.html');
-     
-  	} 
-    public function test()
-      {
-        $data = 'dsadd';
+<?php
+namespace app\ctrl;
+use app\model\liuyanModel;
+class indexCtrl extends \core\ZL
+{
+//所有留言
+    public function index()
+    {
+        $model = new liuyanModel();
+        $data=$model->all();
         $this->assign('data',$data);
-        $this->display('test.html');
+        $this->display('index.html');
+    }
+
+
+//添加留言
+    public function add()
+    {
+
+        $this->display('add.html');        
+    }
+//保存留言
+    public function save()
+    { 
+
+      $data['title']=post('title');
+      $data['content']=post('content');
+      $data['creattime']=time();
+      $model=new liuyanModel();
+      $re=$model->addOne($data);
+      if($re)
+      {
+        jump('/');
       }
-  } 
-?>
+      else
+      {
+       jump('/index.php/index/add'); 
+      }
+    }
+    public function del()
+    {
+        $id=get('id','0','int');
+        if($id)
+        {
+            $model=new liuyanModel();
+            $re=$model->delOne($id);
+            if($re)
+            {
+               jump('/'); 
+            }
+            else
+            {
+                exit('删除失败');
+            }
+        }
+        else
+        {
+           exit('参数错误'); 
+        }
+    }
+}

@@ -64,23 +64,21 @@
   	 }
 
   	 public function display($file)
-  	 {
-         $file = APP.'/view/'.$file;
-         //p($file);
-         if(is_file($file))
-         {   
-         	//p($file);
-         	
-            // include $file;
-            \Twig_Autoloader::register();
+  	 {   
+         
+         $files = APP.'/view/'.$file;
 
+         if(is_file($files))
+         {   
+            \Twig_Autoloader::register();
             $loader = new \Twig_Loader_Filesystem(APP.'/view');
             $twig = new \Twig_Environment($loader, array(
                 'cache' => ZL.'/log/twig',
                 'debug' => DEBUG
             ));
-            $template = $twig->loadTemplate('index.html');
-            $template->display($this->assign?$this->assign:'');
+            $template = $twig->loadTemplate($file);
+            
+            $template->display($this->assign?$this->assign:array());
 
          }
   	 }

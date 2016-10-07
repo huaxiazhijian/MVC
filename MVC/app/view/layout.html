@@ -1,10 +1,38 @@
-<html>
-	<body>
-		<header>haeder</header>
-		  <content>
-		  	{% block content %}
-		  	{% endblock %}
-		  </content>
-		<footer>footer</footer>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- <meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="Viewport" content="width=device-width,initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<link rel="stylesheet" href="/assets/css/amazeui.min.css"/>
+	<link rel="stylesheet" href="/assets/css/app.css"/> -->
+</head>
+  
+<body>
+	<header class="am-topbar am-text-center">
+	 <h1 class="am-sm-12">超简单留言板</h1>
+	 <div class="am-g">
+	 	<a class="am-btn-default" href="/">所有留言</a>
+	 	<a class="am-btn-default" href="/index.php/index/add">添加留言</a>
+	 </div>
+	</header> 	
+	 <div class="am-g content">
+	 {% block content %}
+	 {% endblock %}	 
+	 </div>
+	<footer class="footer">
+		<p>&copy; 2016 超简单留言板</p>
+	</footer>
+	
+	<!-- <script scr="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	// <script scr="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+	// <script scr="assets/js/amazeui.ie&polyfill.min.js"></script>
+	// <script scr="assets/js/jquery.min.js"></script>
+	// <script scr="assets/js/amazeui.min.js"></script> -->
+	
+</body>
 </html>

@@ -16,5 +16,90 @@
 	    border-radius:5px;background:#CCCCCC;border:1px splid:#aaa;font-size:14px;
 	    line-height:18px;opacity:0.9'>".print_r($var,true)."</pre>";
 	  }
-	}  
+	}
+	/**
+	 * [post description]
+	 * @param  [type] $name    [对应值]
+	 * @param  string $default [默认值]
+	 * @param  string $fitt    [过滤方法]
+	 * @return [type]          [description]
+	 */
+	function post($name,$default=false,$fitt=false)
+	{
+      if(isset($_POST[$name]))
+      {
+        if($fitt)
+        {
+        	switch ($fitt) 
+        	{
+        		case 'int':
+	        		if(is_numeric($_POST[$name]))
+	        		{
+	        			return $_POST[$name];
+	        		}
+	        		else
+	        		{
+	        			return $default;
+	        		}
+        			break;
+        		default: ;
+        			# code...
+        			break;
+        	}
+        }
+        else
+        {
+        	return $_POST[$name];
+        }
+      }
+      else
+      {
+      	return $default;
+      }
+	} 
+	/**
+	 * [post description]
+	 * @param  [type] $name    [对应值]
+	 * @param  string $default [默认值]
+	 * @param  string $fitt    [过滤方法]
+	 * @return [type]          [description]
+	 */
+	function get($name,$default=false,$fitt=false)
+	{
+      if(isset($_GET[$name]))
+      {
+        if($fitt)
+        {
+        	switch ($fitt) 
+        	{
+        		case 'int':
+	        		if(is_numeric($_GET[$name]))
+	        		{
+	        			return $_GET[$name];
+	        		}
+	        		else
+	        		{
+	        			return $default;
+	        		}
+        			break;
+        		default: ;
+        			# code...
+        			break;
+        	}
+        }
+        else
+        {
+        	return $_GET[$name];
+        }
+      }
+      else
+      {
+      	return $default;
+      }
+	} 
+	function jump($url)
+	{
+      header('Location:'.$url);
+      exit();
+	}
 ?>
